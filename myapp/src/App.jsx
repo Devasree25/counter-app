@@ -24,16 +24,24 @@ function App() {
     return()=>clearInterval(time);
     });
      
+   const Restart_Timer = ()=>{
+    Sethr(0);
+    Setmin(0);
+    Setsec(0);
+   }
+   const stop_Timer =()=>{
+    clearInterval(time);
+   }
  
   return (
     <>
-      <div>
+      <div className='body'>
+        <h1>COUNTER_APP</h1>
        
         <h1>{hr<10? "0" +hr:hr}:{min<10? "0" +min:min}:{sec<10? "0" +sec:sec}</h1>
-        <button>Stop</button>
-        
-       
-       
+        <button className='btn1' onClick={Restart_Timer}>Restart</button>
+        <button className="btn2"onClick={stop_Timer}>Pause</button>
+      
       </div>
       
     </>
